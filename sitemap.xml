@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jgxnb.cn/categories/index.html</loc>
+    
+    <lastmod>2023-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jgxnb.cn/tags/index.html</loc>
+    
+    <lastmod>2023-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jgxnb.cn/music/index.html</loc>
+    
+    <lastmod>2023-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jgxnb.cn/link/index.html</loc>
+    
+    <lastmod>2023-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jgxnb.cn/2016/03/30/hello-world/</loc>
+    
+    <lastmod>2023-01-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jgxnb.cn/2022/03/06/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</loc>
     
     <lastmod>2023-01-20</lastmod>
@@ -22,20 +57,6 @@
     
   </url>
   
-  <url>
-    <loc>https://jgxnb.cn/2021/11/02/hello-world/</loc>
-    
-    <lastmod>2023-01-19</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jgxnb.cn/music/index.html</loc>
-    
-    <lastmod>2022-03-08</lastmod>
-    
-  </url>
-  
 
   <url>
     <loc>https://jgxnb.cn/</loc>
@@ -44,6 +65,13 @@
     <priority>1.0</priority>
   </url>
 
+  
+  <url>
+    <loc>https://jgxnb.cn/tags/%E4%BD%9C%E4%B8%BA%E6%97%A5%E8%AE%B0%E5%8A%A0%E5%AF%86/</loc>
+    <lastmod>2023-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>https://jgxnb.cn/tags/%E8%B7%AF/</loc>
