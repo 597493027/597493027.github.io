@@ -227,7 +227,7 @@ body::-webkit-scrollbar {
 #nav .menus_items {
   position: absolute !important;
   width: fit-content !important;
-  left: 37% !important;
+  left: 33% !important;
   transform: translateY(-50%) !important;
   
 
