@@ -1,0 +1,536 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C语言——面试题 | Cc</title><meta name="keywords" content="C语言"><meta name="author" content="Cc"><meta name="copyright" content="Cc"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="题目来源公司面试题 简答题*程序的局部变量存在于___ 中，全局变量存在于____中，动态申请数据存在于___ 中。* 程序的局部变量存在于栈(stack) 中，全局变量存在于静态数据区中，动态申请数据存在于堆（heap）中。 这一题全部是概念的问题，需要牢记！！ *PC为32位机，计算该结构体大小？* 1234567struct name1&amp;#123;    char str;    short">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言——面试题">
+<meta property="og:url" content="https://jgxnb.cn/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="Cc">
+<meta property="og:description" content="题目来源公司面试题 简答题*程序的局部变量存在于___ 中，全局变量存在于____中，动态申请数据存在于___ 中。* 程序的局部变量存在于栈(stack) 中，全局变量存在于静态数据区中，动态申请数据存在于堆（heap）中。 这一题全部是概念的问题，需要牢记！！ *PC为32位机，计算该结构体大小？* 1234567struct name1&amp;#123;    char str;    short">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tuchuang.voooe.cn/images/2023/02/05/4k-------_.md.jpg">
+<meta property="article:published_time" content="2023-02-05T08:51:32.000Z">
+<meta property="article:modified_time" content="2023-02-05T13:04:51.470Z">
+<meta property="article:author" content="Cc">
+<meta property="article:tag" content="C语言">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tuchuang.voooe.cn/images/2023/02/05/4k-------_.md.jpg"><link rel="shortcut icon" href="/img/jgx.jpg"><link rel="canonical" href="https://jgxnb.cn/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: 'days',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言——面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2023-02-05 21:04:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><link rel="stylesheet" href="/css/readPercent.css"><link rel="stylesheet" href="/css/universe.css"><link rel="stylesheet" href="/css/custom.css"><div id="myscoll"></div><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Cc" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/jgx.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> message</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://tuchuang.voooe.cn/images/2023/02/05/4k--3D-----_.md.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cc</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fa fa-paper-plane"></i><span> message</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言——面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2023-02-05T08:51:32.000Z" title="Created 2023-02-05 16:51:32">2023-02-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-02-05T13:04:51.470Z" title="Updated 2023-02-05 21:04:51">2023-02-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%88%91%E7%9A%84C%E8%AF%AD%E8%A8%80/">我的C语言</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word count:</span><span class="word-count">2.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading time:</span><span>11min</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C语言——面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p>公司面试题</p>
+<h1 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h1><p><em><strong>*程序的局部变量存在于___ 中，全局变量存在于____中，动态申请数据存在于___ 中。*</strong></em></p>
+<p><font color="#dd0000">程序的局部变量存在于栈(stack) 中，全局变量存在于静态数据区中，动态申请数据存在于堆（heap）中。</font><br /></p>
+<p>这一题全部是概念的问题，需要牢记！！</p>
+<p><em><strong>*PC为32位机，计算该结构体大小？*</strong></em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">name1</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> str;</span><br><span class="line">    <span class="keyword">short</span> x;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">&#125;;</span><br><span class="line">求<span class="keyword">sizeof</span>(name1)?  (<span class="number">8</span>字节)</span><br></pre></td></tr></table></figure>
+
+<p>这一题考察的是结构体大小的计算，需要记住几个点（来自菜鸟教程）</p>
+<ul>
+<li>结构体变量的首地址能够被其最宽基本类型成员的大小所整除；</li>
+<li>结构体每个成员相对于结构体首地址的偏移量（offset）都是成员大小的整数倍，如有需要编译器会在成员之间加上填充字（internal adding）；</li>
+<li>结构体的总大小为结构体最宽基本类型成员大小的整数倍，如有需要编译器会在最末一个成员之后加上填充字节（trailing padding）</li>
+</ul>
+<p>题目中的三个变量大小分别为：1个字节、2个字节、4个字节。</p>
+<p>char分配一个字节，short分配2个字节，由于int 为4个字节，此时前面1+2为3，不能满足int4字节的整数倍，因此对于要点2，会自动补上1字节，这样一来字节数变成4字节，加上int的4字节一共为8字节。</p>
+<p><em>下面这个来测试一下</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">name2</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> str;</span><br><span class="line">    <span class="keyword">int</span> num;</span><br><span class="line">    <span class="keyword">short</span> x;</span><br><span class="line">&#125;; 求<span class="keyword">sizeof</span>(name2)？ (<span class="number">12</span>字节)</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>*static有什么用途？（请至少说明两种）*</strong></em></p>
+<ul>
+<li>限制变量的作用域（static全局变量）；</li>
+<li>设置变量的存储域（static局部变量）。</li>
+</ul>
+<p><em><strong>*void* p = malloc(100)，请计算sizeof(p)。*</strong></em></p>
+<p><font color="#dd0000">根据不同位数的有不同的答案：32位的4字节、64位的8字节。</font><br /></p>
+<p><em><strong>*写一个“标准”宏，这个宏输入两个参数并返回较*</strong></em></p>
+<p><font color="#dd0000">#define Min(X, Y) ((X)&gt;(Y)?(Y):(X))</font><br /></p>
+<p><em><strong>*结构体与联合体的区别。*</strong></em></p>
+<p>结构体中的成员拥有独⽴的空间，共⽤体的成员共享同⼀块空间，但是每个共⽤体成员能访问共⽤区的空间⼤⼩是由成员⾃身的类型决定。<br>共用体使用覆盖技术，成员变量相互覆盖。</p>
+<p><em><strong>*用变量a 给出下面的定义*</strong></em></p>
+<ul>
+<li>一个有10个指针的数组，该指针是指向一个整型数的</li>
+<li>一个指向有10个整型数数组的指针</li>
+<li>一个指向函数的指针，该函数有一个整型参数并返回一个整型数</li>
+<li> 一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *  a[<span class="number">10</span>];      </span><br><span class="line"><span class="keyword">int</span> (*a)[<span class="number">10</span>]     </span><br><span class="line"><span class="keyword">int</span> (*a)(<span class="keyword">int</span>);</span><br><span class="line"><span class="keyword">int</span> (*a[<span class="number">10</span>])(<span class="keyword">int</span>)</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>*++a和a++的区别是什么?*</strong></em></p>
+<p><font color="#dd0000">++a的是先加后取值，a++的是先取值后增加</font><br /></p>
+<p><em><strong>*大端和小端*</strong></em></p>
+<p>小端 - 低字节存储在低地址 高字节存储在最高地址</p>
+<p>如：Intel、AMD、X86等采用的是这种方式；</p>
+<p>大端- 高字节存储在低地址 低字节存储在高地址</p>
+<h1 id="应用题"><a href="#应用题" class="headerlink" title="应用题"></a>应用题</h1><h2 id="取一个范围为-100-499的随机数"><a href="#取一个范围为-100-499的随机数" class="headerlink" title="取一个范围为-100~499的随机数"></a>取一个范围为-100~499的随机数</h2><p>运用到随机数</p>
+<p>试卷上的答案</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_rand_func</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    </span><br><span class="line">    a = <span class="number">-100</span>;</span><br><span class="line">    srand(a);</span><br><span class="line">    b = rand() % <span class="number">600</span> + a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自己写的</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand((<span class="keyword">unsigned</span> <span class="keyword">int</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="keyword">int</span> ret = (rand() % <span class="number">500</span>)<span class="number">-100</span>;<span class="comment">//可以生成-100~499的数</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ret);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查错题1"><a href="#查错题1" class="headerlink" title="查错题1"></a>查错题1</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码是将输入的字符串拼接，&quot;姓名&quot;,&quot;张三&quot;=&gt;&quot;姓名张三&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">func</span><span class="params">(<span class="keyword">char</span>* ch1, <span class="keyword">char</span>* ch2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> ch[<span class="number">256</span>];<span class="comment">//</span></span><br><span class="line">    <span class="keyword">int</span> len;  </span><br><span class="line">    <span class="built_in">memcpy</span>(ch, ch1, <span class="built_in">strlen</span>(ch1));</span><br><span class="line">    len = <span class="built_in">strlen</span>(ch1);</span><br><span class="line">    <span class="built_in">memcpy</span>(ch + len, ch2, <span class="built_in">strlen</span>(ch2));</span><br><span class="line">    len += <span class="built_in">strlen</span>(ch2);</span><br><span class="line">    ch[len] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span>* ch;</span><br><span class="line">  	ch = func(<span class="string">&quot;姓名&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;合成字符串:%s\n&quot;</span>, ch);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这一题主要考察的是局部变量跟全局变量的引用，局部变量，在函数运行完之后就会马上释放掉，最后返回ch时，返回的是一个空值，cahr* 返回的是地址，此地址已经被释放掉了，返回出来即为错误的，造成字符串的拼接失败，正确的改法如下代码所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> ch[<span class="number">256</span>] ;</span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">func</span><span class="params">(<span class="keyword">char</span>* ch1, <span class="keyword">char</span>* ch2)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memcpy</span>(ch, ch1, <span class="built_in">strlen</span>(ch1));</span><br><span class="line">    len = <span class="built_in">strlen</span>(ch1);</span><br><span class="line">    <span class="built_in">memcpy</span>( ch + len , ch2, <span class="built_in">strlen</span>(ch2));<span class="comment">//</span></span><br><span class="line">    len += <span class="built_in">strlen</span>(ch2);</span><br><span class="line">    ch[len ] =<span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ch;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span>* ch;</span><br><span class="line">	ch = func(<span class="string">&quot;姓名&quot;</span>, <span class="string">&quot;张三&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;合成字符串:%s\n&quot;</span>, ch);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>把定义的char ch[256] 换成全局变量，此代码即可运行成功。</p>
+<h2 id="查错题2"><a href="#查错题2" class="headerlink" title="查错题2"></a>查错题2</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码是把一个字符串倒序, &quot;hello,world&quot;=&gt;&quot;dlrow,olleh&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* src = <span class="string">&quot;hello,world&quot;</span>;</span><br><span class="line">	<span class="keyword">char</span>* dest = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* d = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* s = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    len = <span class="built_in">strlen</span>(src);</span><br><span class="line">	dest = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(len);<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (dest == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	d = dest;</span><br><span class="line">	s = src[len - <span class="number">1</span>];<span class="comment">//</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(len-- != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	    d++ = s--;<span class="comment">//</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	*d = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, dest);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>该题目考察的是指针与数组之间的指向，以及指针查找字符串数据的位置，例如s = src[len - 1];这样的赋值会出现错误，即为把数据赋值在char* s的上，不是用地址来传递，根据调试出现这个错误</p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205183337929.png" alt="image-20230205183337929"></p>
+<p>正确的做法为：s = src + len -1,调试端如下</p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205183629571.png" alt="image-20230205183629571"></p>
+<p>更改完这个，一下子就看出来 d++ = s–，这里存在错误，d是指针你要改地址里的内容就是+ 星号，不然就是把指针值改掉了而不是改指针指向的内容，这部分不能这写，一开始我写成了这样*（d++） = s–，这里即出现了大问题，d上的数据为s上的地址，由于，char * 为一个字节，只会保存最后小端的地址最后的两个字节（我电脑是小端的），造成一开始数据不是反写的情况，具体如下调试说明：</p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205190025940.png" alt="image-20230205190025940"></p>
+<p>赋值给d的地址最开始的最后俩位为7a转化为10进制即为122，对应ASCII即为z，这也是遇到的一个问题，分析出原因，理解了指针字符的作用，也间接的理解了大小端的关系。最后修改即为*（d++） = *（s–），取值的赋值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码是把一个字符串倒序, &quot;hello,world&quot;=&gt;&quot;dlrow,olleh&quot;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>* src = <span class="string">&quot;hello,world&quot;</span>;</span><br><span class="line">	<span class="keyword">char</span>* dest = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* d = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">char</span>* s = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    len = <span class="built_in">strlen</span>(src);</span><br><span class="line">	dest = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*len + <span class="number">1</span>);<span class="comment">//分配空间一开始写准确点</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\r\n&quot;</span>,<span class="keyword">sizeof</span>(<span class="keyword">char</span>)*len);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%x\r\n&quot;</span>,dest);</span><br><span class="line">	<span class="comment">//printf(&quot;%d\r\n&quot;,len);</span></span><br><span class="line">	<span class="keyword">if</span> (dest == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	d = dest; <span class="comment">//指向刚刚分配的空间首地址</span></span><br><span class="line">	s = src + len - <span class="number">1</span> ;<span class="comment">//这样指向尾部数据</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(len-- != <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	    *(d++) = *(s--);<span class="comment">//指向这个数据，把数据取出来，单纯的s--是数据的地址，会出现错误*(d++) = s--,因为由于char类型，只取地址的最低字节，出来应该即位ASCII码;</span></span><br><span class="line">		 <span class="comment">//printf(&quot;s = %c\r\n&quot;,s);</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	*d = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, dest);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查错题3"><a href="#查错题3" class="headerlink" title="查错题3"></a>查错题3</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码是将学生名记录在结构体表中，并统计学生个数</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> *student;</span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">&#125; INFO_TB;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    INFO_TB* pInfoTb;</span><br><span class="line">	<span class="keyword">char</span>* ch1 = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">	<span class="keyword">char</span>* ch2 = <span class="string">&quot;李四&quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line"></span><br><span class="line">	pInfoTb = (INFO_TB*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(INFO_TB));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pInfoTb == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="built_in">memcpy</span>(pInfoTb-&gt;student, ch1, <span class="built_in">strlen</span>(ch1));</span><br><span class="line">	len = <span class="built_in">strlen</span>(ch1);</span><br><span class="line">	pInfoTb-&gt;count++;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">memcpy</span>(pInfoTb-&gt;student + len, ch2, <span class="built_in">strlen</span>(ch2));</span><br><span class="line">	len += <span class="built_in">strlen</span>(ch2);</span><br><span class="line">	pInfoTb-&gt;count++;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="built_in">free</span>(pInfoTb);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这到题考验的是结构体分配内存，主要卡点为，结构体中存在指针时，需要另外给结构体中的指针分配空间。</p>
+<p>pInfoTb =(INFO_TB*)malloc(sizeof(INFO_TB));分配的是常量，例如int 、char之类的数据，没有给结构体中指向的数据分配空间，造成memcpy错误， memcpy(pInfoTb-&gt;student, ch1, strlen(ch1));这样写以及是地址指向了。另外，分配完空间需要及时的释放，不让会造成内存泄漏。pInfoTb-&gt;count++，看起来是没有问题的，但是在调试的时候出现如下问题：</p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205191905047.png" alt="image-20230205191905047"></p>
+<p>这是没有初始化造成的，跟编译器有关，有的编译器会自动初始化，我使用的是VC++ 6.0版本比较老，没有初始化，在这里画了一些时间。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代码是将学生名记录在结构体表中，并统计学生个数</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;malloc.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> *student;</span><br><span class="line">	<span class="keyword">int</span> count;</span><br><span class="line">&#125; INFO_TB;</span><br><span class="line"><span class="comment">//结构体中，有指针存在，需要单独给指针分配空间。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    INFO_TB* pInfoTb;</span><br><span class="line">	<span class="keyword">char</span>* ch1 = <span class="string">&quot;张三&quot;</span>;</span><br><span class="line">	<span class="keyword">char</span>* ch2 = <span class="string">&quot;李四&quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> len;</span><br><span class="line">	pInfoTb-&gt;count = <span class="number">0</span>;<span class="comment">//初始化需要加上。</span></span><br><span class="line">	pInfoTb = (INFO_TB*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(INFO_TB));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pInfoTb == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//给指针的内容分配空间。</span></span><br><span class="line">	pInfoTb-&gt;student = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(<span class="built_in">strlen</span>(ch1)+<span class="built_in">strlen</span>(ch2)+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">if</span> (pInfoTb-&gt;student == <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memcpy</span>(pInfoTb-&gt;student, ch1, <span class="built_in">strlen</span>(ch1));</span><br><span class="line">	len = <span class="built_in">strlen</span>(ch1);</span><br><span class="line">	pInfoTb-&gt;count++;</span><br><span class="line">	<span class="built_in">memcpy</span>(pInfoTb-&gt;student + len, ch2, <span class="built_in">strlen</span>(ch2));</span><br><span class="line">	len += <span class="built_in">strlen</span>(ch2);</span><br><span class="line">	pInfoTb-&gt;count++;</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="built_in">free</span>(pInfoTb-&gt;student);</span><br><span class="line">	<span class="built_in">free</span>(pInfoTb);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最终的代码如上，这里说一下我的疑惑：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">free</span>(pInfoTb);</span><br><span class="line"><span class="built_in">free</span>(pInfoTb-&gt;student);</span><br></pre></td></tr></table></figure>
+
+<p>能否这样写呢？或者只写一个free(pInfoTb);——不能，因为free(pInfoTb);知识释放这个结构体里面的空间而不会释放结构体指针里面指向的数据的空间，因此不能只写一个，反过来写，也不行，不然结构体以及释放掉了，那一个空的结构体去指向一个数据，这样是释放不掉的。</p>
+<h2 id="请写出一个程序得出当前使用的是大端还是小端存储。"><a href="#请写出一个程序得出当前使用的是大端还是小端存储。" class="headerlink" title="请写出一个程序得出当前使用的是大端还是小端存储。"></a>请写出一个程序得出当前使用的是大端还是小端存储。</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">union</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">&#125;UN_DAT;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check_sys</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    UN_DAT *p, dat;</span><br><span class="line">	dat.i = <span class="number">1</span>;</span><br><span class="line">	p = &amp;dat;</span><br><span class="line">	<span class="keyword">return</span> dat.c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> ret = check_sys();</span><br><span class="line">	<span class="keyword">if</span> (ret == <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;小端\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;大端\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>试卷上的参考答案是用指针，我来换一种方式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*****************************************************/</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">checkCPU</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">union</span> <span class="title">w</span></span></span><br><span class="line"><span class="class">	&#123;</span></span><br><span class="line">		<span class="keyword">int</span> a;</span><br><span class="line">		<span class="keyword">char</span> b;</span><br><span class="line">	&#125;c;</span><br><span class="line">	c.a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span>(c.b == <span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;小端\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;大1\r\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断大小端的代码</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	checkCPU();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>达到的效果一致。大小端的区分要知道数据的在内存中的存放方式：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> a=<span class="number">2</span>;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">（未存储时）a=<span class="number">2</span>转化为<span class="number">16</span>进制时为：（<span class="number">00</span>就是高序字节）<span class="number">0x00</span>  <span class="number">00</span>  <span class="number">00</span>  <span class="number">02</span>(<span class="number">02</span>就是低序字节)(引用CSDNʕ•̀ o •́ʔ！文章)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205200403491.png" alt="image-20230205200403491"></p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/image-20230205200517901.png" alt="image-20230205200517901"></p>
+<p><img src="https://gitee.com/showrom/hexo_picture/raw/master/hexo_picture/%E5%AE%9E%E4%B9%A0%E4%B8%83%E4%B8%AA%E6%9C%88picture/1675596569575.png" alt="1675596569575"></p>
+<p>即可看出来，代码的部分是怎么描述的，我们假设其中一个字节的数据，就能知道另外三个字节的数据了，从而验证猜想。也就是char *p=(char *)&amp;a这句。以下是小端（引用CSDN不悔哥的例子）</p>
+<table>
+<thead>
+<tr>
+<th>0000       0000</th>
+<th align="left">内存高地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000       0000</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>0000       0000</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td>0000       0001</td>
+<td align="left">内存低地址&lt;——</td>
+</tr>
+</tbody></table>
+<p>大端如下</p>
+<table>
+<thead>
+<tr>
+<th>0000    0001</th>
+<th>内存高地址</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000    0000</td>
+<td></td>
+</tr>
+<tr>
+<td>0000    0000</td>
+<td></td>
+</tr>
+<tr>
+<td>0000    0000</td>
+<td>内存低地址&lt;——</td>
+</tr>
+</tbody></table>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>这次的联系弥补了自己的各个细节部分的缺少的点，更加完善了自己的知识体系。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">Cc</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://jgxnb.cn/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/">https://jgxnb.cn/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a></div><div class="post_share"><div class="social-share" data-image="https://tuchuang.voooe.cn/images/2023/02/05/4k-------_.md.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><link rel="stylesheet" href="/css/coin.css" media="defer" onload="this.media='all'"/><div class="post-reward"><button class="tip-button reward-button"><span class="tip-button__text">Donate</span><div class="coin-wrapper"><div class="coin"><div class="coin__middle"></div><div class="coin__back"></div><div class="coin__front"></div></div></div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://tuchuang.voooe.cn/images/2023/01/21/wechat.md.jpg" target="_blank"><img class="post-qr-code-img" src="https://tuchuang.voooe.cn/images/2023/01/21/wechat.md.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="https://tuchuang.voooe.cn/images/2023/01/21/alipay.md.jpg" target="_blank"><img class="post-qr-code-img" src="https://tuchuang.voooe.cn/images/2023/01/21/alipay.md.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></button></div><audio id="coinAudio" src="https://npm.elemecdn.com/akilar-candyassets@1.0.36/audio/aowu.m4a"></audio><script defer="defer" src="/js/coin.js"></script><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/02/05/md-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%E6%B1%87%E6%80%BB/"><img class="prev-cover" src="https://tuchuang.voooe.cn/images/2023/02/05/c80f09310aac4559a629116e21d19934.md.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">md--书写格式汇总</div></div></a></div><div class="next-post pull-right"><a href="/2023/02/03/%E6%AF%8F%E5%91%A8%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%881%EF%BC%89/"><img class="next-cover" src="https://tuchuang.voooe.cn/images/2023/02/05/792a4b6934fc491b81342206e3192e59.md.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">每周工作内容（1）</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2023/01/24/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE/" title="C语言——字符串、数据转换"><img class="cover" src="https://tuchuang.voooe.cn/images/2023/01/24/-4k3840x2160_.md.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-24</div><div class="title">C语言——字符串、数据转换</div></div></a></div><div><a href="/2023/01/30/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E7%8C%9C%E5%AD%97%E8%B0%9C%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="C语言——猜字谜小游戏"><img class="cover" src="https://tuchuang.voooe.cn/images/2023/01/30/----4k-_.md.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-30</div><div class="title">C语言——猜字谜小游戏</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="author_top is-center"><div class="card-info-avatar"><div class="avatar-img"><img src="/img/jgx.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-status-box"><div class="author-status"><g-emoji class="g-emoji" alias="palm_tree" fallback-src="https://lskypro.acozycotage.net/LightPicture/2022/12/fe1dc0402e623096.jpg">🐟</g-emoji><span>头像好看呀</span></div></div></div><div class="author-info__name">Cc</div><div class="author-info__description">我的嵌入式之路</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content"><center><b>--- 主域名 ---<br><a target="_blank" rel="noopener" href="https://showrom.gitee.io" title="此线路部署于Gitee" class="anno_content"><font color="#5ea6e5">showrom.gitee.io</font></a><br>--- 备用域名 ---<br><font color="#5ea6e5">还在建设当中，请稍等</font><br>--- 这是我的博客 ---<br>🍧<font color="#5ea6e5">欢迎观看</font></a>🍧</b></center></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">1.</span> <span class="toc-text">题目来源</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AE%80%E7%AD%94%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">简答题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">应用题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%96%E4%B8%80%E4%B8%AA%E8%8C%83%E5%9B%B4%E4%B8%BA-100-499%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">3.1.</span> <span class="toc-text">取一个范围为-100~499的随机数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E9%94%99%E9%A2%981"><span class="toc-number">3.2.</span> <span class="toc-text">查错题1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E9%94%99%E9%A2%982"><span class="toc-number">3.3.</span> <span class="toc-text">查错题2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E9%94%99%E9%A2%983"><span class="toc-number">3.4.</span> <span class="toc-text">查错题3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E5%86%99%E5%87%BA%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%BE%97%E5%87%BA%E5%BD%93%E5%89%8D%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%A4%A7%E7%AB%AF%E8%BF%98%E6%98%AF%E5%B0%8F%E7%AB%AF%E5%AD%98%E5%82%A8%E3%80%82"><span class="toc-number">3.5.</span> <span class="toc-text">请写出一个程序得出当前使用的是大端还是小端存储。</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/02/05/md-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%E6%B1%87%E6%80%BB/" title="md--书写格式汇总"><img src="https://tuchuang.voooe.cn/images/2023/02/05/c80f09310aac4559a629116e21d19934.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="md--书写格式汇总"/></a><div class="content"><a class="title" href="/2023/02/05/md-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%E6%B1%87%E6%80%BB/" title="md--书写格式汇总">md--书写格式汇总</a><time datetime="2023-02-05T12:29:15.000Z" title="Created 2023-02-05 20:29:15">2023-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/" title="C语言——面试题"><img src="https://tuchuang.voooe.cn/images/2023/02/05/4k-------_.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言——面试题"/></a><div class="content"><a class="title" href="/2023/02/05/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E9%9D%A2%E8%AF%95%E9%A2%98/" title="C语言——面试题">C语言——面试题</a><time datetime="2023-02-05T08:51:32.000Z" title="Created 2023-02-05 16:51:32">2023-02-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/02/03/%E6%AF%8F%E5%91%A8%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%881%EF%BC%89/" title="每周工作内容（1）"><img src="https://tuchuang.voooe.cn/images/2023/02/05/792a4b6934fc491b81342206e3192e59.md.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="每周工作内容（1）"/></a><div class="content"><a class="title" href="/2023/02/03/%E6%AF%8F%E5%91%A8%E5%B7%A5%E4%BD%9C%E5%86%85%E5%AE%B9%EF%BC%881%EF%BC%89/" title="每周工作内容（1）">每周工作内容（1）</a><time datetime="2023-02-03T14:50:09.000Z" title="Created 2023-02-03 22:50:09">2023-02-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/30/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E7%8C%9C%E5%AD%97%E8%B0%9C%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="C语言——猜字谜小游戏"><img src="https://tuchuang.voooe.cn/images/2023/01/30/----4k-_.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言——猜字谜小游戏"/></a><div class="content"><a class="title" href="/2023/01/30/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E7%8C%9C%E5%AD%97%E8%B0%9C%E5%B0%8F%E6%B8%B8%E6%88%8F/" title="C语言——猜字谜小游戏">C语言——猜字谜小游戏</a><time datetime="2023-01-30T03:48:30.000Z" title="Created 2023-01-30 11:48:30">2023-01-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/01/24/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE/" title="C语言——字符串、数据转换"><img src="https://tuchuang.voooe.cn/images/2023/01/24/-4k3840x2160_.md.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言——字符串、数据转换"/></a><div class="content"><a class="title" href="/2023/01/24/C%E8%AF%AD%E8%A8%80%E2%80%94%E2%80%94%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9F%A5%E6%89%BE/" title="C语言——字符串、数据转换">C语言——字符串、数据转换</a><time datetime="2023-01-24T07:53:12.000Z" title="Created 2023-01-24 15:53:12">2023-01-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://tuchuang.voooe.cn/images/2023/02/05/4k--3D-----_.md.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023  <i id="heartbeat" class="fa fas fa-heartbeat">大傻der<i id="heartbeat" class="fa fas fa-heartbeat"></i></i></div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">欢迎来到我的世界</div></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'r1W11dpmtZZwmAfkQM85vwLI-gzGzoHsz',
+      appKey: 'SZxaDLC4nt3mimY0lnnucAbz',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.17.0/js/md5.min.js"></script><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[image]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[link]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[code]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getIcon = (icon, mail) => {
+    if (icon) return icon
+    let defaultIcon = '?d=monsterid'
+    let iconUrl = `https://gravatar.loli.net/avatar/${md5(mail.toLowerCase()) + defaultIcon}`
+    return iconUrl
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += 'No Comment'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom.innerHTML= result
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const getComment = () => {
+    const serverURL = 'https://r1W11dpm.api.lncldglobal.com'
+
+    var settings = {
+      "method": "GET",
+      "headers": {
+        "X-LC-Id": 'r1W11dpmtZZwmAfkQM85vwLI-gzGzoHsz',
+        "X-LC-Key": 'SZxaDLC4nt3mimY0lnnucAbz',
+        "Content-Type": "application/json"
+      },
+    }
+
+    fetch(`${serverURL}/1.1/classes/Comment?limit=6&order=-createdAt`,settings)
+      .then(response => response.json())
+      .then(data => {
+        const valineArray = data.results.map(function (e) {
+          return {
+            'avatar': getIcon(e.QQAvatar, e.mail),
+            'content': changeContent(e.comment),
+            'nick': e.nick,
+            'url': e.url + '#' + e.objectId,
+            'date': e.updatedAt,
+          }
+        })
+        saveToLocal.set('valine-newest-comments', JSON.stringify(valineArray), 10/(60*24))
+        generateHtml(valineArray)
+      }).catch(e => {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.innerHTML= "Unable to get the data, please make sure the settings are correct."
+      }) 
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('valine-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer data-pjax src="/js/cat.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer data-pjax src="/js/readPercent.js"></script><script async src="/js/title.js"></script><div class="aplayer no-destroy" data-id="163150274" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://tuchuang.voooe.cn/images/2023/01/19/picture1.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/我的C语言/&quot;);" href="javascript:void(0);">我的C语言</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">我的C语言</span></li><li class="categoryBar-list-item" style="background:url(https://tuchuang.voooe.cn/images/2023/01/22/4k_.md.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/我的故事/&quot;);" href="javascript:void(0);">我的故事</a><span class="categoryBar-list-count">4</span><span class="categoryBar-list-descr">我的故事</span></li><li class="categoryBar-list-item" style="background:url(https://tuchuang.voooe.cn/images/2023/01/24/24k_.md.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/我的作品/&quot;);" href="javascript:void(0);">我的作品</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">我的作品</span></li><li class="categoryBar-list-item" style="background:url(https://tuchuang.voooe.cn/images/2023/02/05/4fc551ee880a11ebb6edd017c2d2eca2.md.jpg);"> <a class="categoryBar-list-link" onclick="pjax.loadUrl(&quot;categories/我的工作/&quot;);" href="javascript:void(0);">我的工作</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">我的工作</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '2');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
