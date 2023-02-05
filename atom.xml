@@ -6,7 +6,7 @@
   <link href="https://jgxnb.cn/atom.xml" rel="self"/>
   
   <link href="https://jgxnb.cn/"/>
-  <updated>2023-02-05T13:28:08.188Z</updated>
+  <updated>2023-02-05T13:54:07.674Z</updated>
   <id>https://jgxnb.cn/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://jgxnb.cn/2023/02/05/md-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%E6%B1%87%E6%80%BB/"/>
     <id>https://jgxnb.cn/2023/02/05/md-%E4%B9%A6%E5%86%99%E6%A0%BC%E5%BC%8F%E6%B1%87%E6%80%BB/</id>
     <published>2023-02-05T12:29:15.000Z</published>
-    <updated>2023-02-05T13:28:08.188Z</updated>
+    <updated>2023-02-05T13:54:07.674Z</updated>
     
-    <content type="html"><![CDATA[<p>这一篇章是用来添加MD的书写格式</p><p><em><strong>*static有什么用途？（请至少说明两种）*</strong></em></p><p><font color="#dd0000">根据不同位数的有不同的答案：32位的4字节、64位的8字节。</font><br /></p><ul><li>一个有10个指针的数组，该指针是指向一个整型数的</li><li>一个指向有10个整型数数组的指针</li><li>一个指向函数的指针，该函数有一个整型参数并返回一个整型数</li><li> 一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数</li></ul><table><thead><tr><th>0000    0001</th><th>内存高地址</th></tr></thead><tbody><tr><td>0000    0000</td><td></td></tr><tr><td>0000    0000</td><td></td></tr><tr><td>0000    0000</td><td>内存低地址&lt;——</td></tr></tbody></table><p>size为1：<font size="1">size为1</font><br /></p><p><font face="微软雅黑">我是微软雅黑字</font> </p><table>     <tr>         <td bgcolor=#FF00FF>背景色的设置是按照十六进制颜色值：#7FFFD4</td>        </tr> </table>]]></content>
+    <content type="html"><![CDATA[<p>这一篇章是用来添加MD的书写格式</p><p><em><strong>*static有什么用途？（请至少说明两种）*</strong></em></p><p><font color="#dd0000">根据不同位数的有不同的答案：32位的4字节、64位的8字节。</font><br /></p><ul><li>一个有10个指针的数组，该指针是指向一个整型数的</li><li>一个指向有10个整型数数组的指针</li><li>一个指向函数的指针，该函数有一个整型参数并返回一个整型数</li><li> 一个有10个指针的数组，该指针指向一个函数，该函数有一个整型参数并返回一个整型数</li></ul><table><thead><tr><th align="center">0000    0001</th><th align="center">内存高地址</th></tr></thead><tbody><tr><td align="center">0000    0000</td><td align="center"></td></tr><tr><td align="center">0000    0000</td><td align="center"></td></tr><tr><td align="center">0000    0000</td><td align="center">内存低地址&lt;——</td></tr></tbody></table><p>size为1：<font size="1">size为1</font><br /></p><p><font face="微软雅黑">我是微软雅黑字</font> </p><table>     <tr>         <td bgcolor=#FF00FF>背景色的设置是按照十六进制颜色值：#7FFFD4</td>        </tr> </table><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="emphasis">*这里是文字*</span></span><br><span class="line"><span class="emphasis">_这里是文字_</span></span><br><span class="line"><span class="strong">**这里是文字**</span></span><br><span class="line"><span class="strong">**<span class="emphasis">*这里是文字<span class="strong">**<span class="emphasis">*</span></span></span></span></span><br><span class="line"><span class="emphasis"><span class="strong"><span class="emphasis"><span class="strong">~~这里是文字~~</span></span></span></span></span><br></pre></td></tr></table></figure><p><em>这里是文字</em><br><em>这里是文字</em><br><strong>这里是文字</strong><br><em><strong>这里是文字</strong></em><br><del>这里是文字</del></p><p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。也可以直接写，也是可以显示成链接形式的</p><p><a href="https://blog.csdn.net/u014061630/article/details/81359144">(45条消息) Markdown语法图文全面详解(10分钟学会)_黑暗星球的博客-CSDN博客_markdown语法</a></p><p>（1）无序列表<br>使用 *，+，- 表示无序列表。<br>注意：符号后面一定要有一个空格，起到缩进的作用。</p>]]></content>
     
     
       
