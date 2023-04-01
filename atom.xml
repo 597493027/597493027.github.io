@@ -6,7 +6,7 @@
   <link href="https://jgxnb.cn/atom.xml" rel="self"/>
   
   <link href="https://jgxnb.cn/"/>
-  <updated>2023-04-01T12:06:32.980Z</updated>
+  <updated>2023-04-01T12:08:55.375Z</updated>
   <id>https://jgxnb.cn/</id>
   
   <author>
@@ -21,16 +21,8 @@
     <link href="https://jgxnb.cn/2023/04/01/%E5%9F%BA%E4%BA%8ELinuxC++%E8%BD%A6%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%99%A8%E5%BC%80%E5%8F%91%EF%BC%882%EF%BC%89/"/>
     <id>https://jgxnb.cn/2023/04/01/%E5%9F%BA%E4%BA%8ELinuxC++%E8%BD%A6%E8%BD%BD%E6%98%BE%E7%A4%BA%E5%99%A8%E5%BC%80%E5%8F%91%EF%BC%882%EF%BC%89/</id>
     <published>2023-04-01T07:05:11.000Z</published>
-    <updated>2023-04-01T12:06:32.980Z</updated>
+    <updated>2023-04-01T12:08:55.375Z</updated>
     
-    <content type="html"><![CDATA[<p><font color="#dd0000">这是接下来的制作，在这个车载显示屏中，加上UDP、TCP、蓝牙界面相关的代码以及跳转。接下来，会讲述，开发过程中的问题以及自己添加的修改，部分（源代码基于正点原子，接来下，就不在重复说明！！！）</font><br /></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;font color=&quot;#dd0000&quot;&gt;这是接下来的制作，在这个车载显示屏中，加上UDP、TCP、蓝牙界面相关的代码以及跳转。接下来，会讲述，开发过程中的问题以及自己添加的修改，部分（源代码基于正点原子，接来下，就不在重复说明！！！）&lt;/font&gt;&lt;br /&gt;&lt;/p&gt;
-</summary>
-      
     
     
     
