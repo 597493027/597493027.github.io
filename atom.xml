@@ -6,7 +6,7 @@
   <link href="https://jgxnb.cn/atom.xml" rel="self"/>
   
   <link href="https://jgxnb.cn/"/>
-  <updated>2023-04-01T13:35:11.980Z</updated>
+  <updated>2023-04-08T02:59:30.400Z</updated>
   <id>https://jgxnb.cn/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的书籍之软技能</title>
+    <link href="https://jgxnb.cn/2023/04/08/%E6%88%91%E7%9A%84%E4%B9%A6%E7%B1%8D%E4%B9%8B%E8%BD%AF%E6%8A%80%E8%83%BD/"/>
+    <id>https://jgxnb.cn/2023/04/08/%E6%88%91%E7%9A%84%E4%B9%A6%E7%B1%8D%E4%B9%8B%E8%BD%AF%E6%8A%80%E8%83%BD/</id>
+    <published>2023-04-08T02:56:25.000Z</published>
+    <updated>2023-04-08T02:59:30.400Z</updated>
+    
+    
+    
+    
+    <category term="我的C语言" scheme="https://jgxnb.cn/categories/%E6%88%91%E7%9A%84C%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="C语言" scheme="https://jgxnb.cn/tags/C%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>基于LinuxC++车载显示器开发（2）</title>
